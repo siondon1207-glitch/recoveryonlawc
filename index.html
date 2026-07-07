@@ -1,23 +1,981 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+    <!-- JSON-LD 구조화 데이터 적용 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://credit.reliabledone.com/rehabilitation-guide"
+          },
+          "headline": "2026년 개인회생면책 가이드: 전국 지역별 비용 비교, 신청 자격 및 신용 회복 전략",
+          "description": "2026년 대폭 인상된 최저생계비 기준을 반영한 개인회생면책 총정리 가이드입니다. 서울, 부산, 대구, 대전, 광주 등 전국 주요 지역별 비용 비교, 신청 방법, 면책 후 신용점수 회복까지 심층 분석합니다.",
+          "author": {
+            "@type": "Organization",
+            "name": "신용회복지원연구소"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "신용회복지원연구소"
+          },
+          "datePublished": "2026-07-07",
+          "dateModified": "2026-07-07"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "개인회생면책 후 신용점수 회복은 언제 어떻게 이루어지나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "개인회생 면책결정 정본이 확정되면 법원은 한국신용정보원에 면책통보를 보냅니다. 통상 면책결정문 도달 후 약 1주일에서 2주일 이내에 연체 및 공공정보 기록이 삭제되며, 이후 사용자가 적극적으로 신용 거래를 유지하면서 신용점수를 회복해 나가게 됩니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "2026년 인상된 개인회생 최저생계비는 얼마인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026년도 기준중위소득 60%를 반영한 최저생계비는 1인 가구 약 1,538,543원, 2인 가구 약 2,519,575원, 3인 가구 약 3,215,422원, 4인 가구 약 3,896,843원으로 인상되었습니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        :root {
+            --primary-color: #1E3A8A;
+            --primary-hover: #172554;
+            --secondary-color: #0D9488;
+            --secondary-hover: #115E59;
+            --accent-color: #BE123C;
+            --bg-color: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-color: #334155;
+            --text-dark: #0F172A;
+            --border-color: #E2E8F0;
+            --highlight-bg: #F0FDFA;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 2.4em;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--secondary-color);
+            padding-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.8em;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.35em;
+            margin-top: 1.8em;
+            margin-bottom: 0.8em;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.6em;
+            text-align: justify;
+            font-size: 1.05em;
+            word-break: keep-all;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1em;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: var(--highlight-bg);
+            border-left: 6px solid var(--secondary-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        thead th {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        tbody tr:hover {
+            background-color: #F1F5F9;
+        }
+
+        /* Form Design for High Dwell Time */
+        .form-section {
+            background: #F8FAFC;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin: 40px 0;
+        }
+
+        .form-section-title {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 0.95em;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1em;
+            color: var(--text-dark);
+            background-color: #FFFFFF;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #FFFFFF;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            background: #FFFFFF;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            background: var(--secondary-color);
+            color: #FFFFFF;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-hover);
+        }
+
+        .external-links {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .external-link-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .external-link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .external-link-card label {
+            display: block;
+            font-size: 0.85em;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .external-link-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        .external-link-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85em;
+            color: #64748B;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            th, td {
+                padding: 10px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026년 개인회생면책 가이드: 전국 지역별 비용 비교 및 신용 회복 전략</h1>
+
+        <p>어려운 경제적 여건 속에서 채무 조정을 고민하는 분들에게 가장 실질적인 해법이 될 수 있는 제도가 바로 개인회생과 그 최종 단계인 <strong>개인회생면책</strong>입니다. 법원이 강제적으로 채무를 재조정하고 면제해 주는 이 제도는, 성실하게 변제계획을 수행한 채무자에게 주어지는 최종적인 권리 구제 수단입니다. 본 가이드는 2026년 새롭게 개정된 기준 중위소득과 지역별 회생법원 신설 동향을 반영하여, <strong>개인회생면책</strong>을 향한 여정을 준비하는 모든 분들이 가장 합리적인 선택을 내릴 수 있도록 돕기 위해 작성되었습니다. 전국의 주요 지역별 수임료 수준과 절차상의 특징을 면밀히 비교하여 가장 지혜롭게 채무 조정을 마칠 수 있는 방법을 공유합니다.</p>
+
+        <div class="nav-links">
+            <a href="#section-intro">1. 개인회생과 면책제도의 본질</a>
+            <a href="#section-cost-2026">2. 2026년 기준 중위소득 및 생계비</a>
+            <a href="#section-regional-cost">3. 전국 30개 지역별 수임 비용 분석</a>
+            <a href="#section-age-strategy">4. 연령별 채무 발생 원인과 전략</a>
+            <a href="#section-agency-guide">5. 대리인 업체 및 법률 상담 선택</a>
+            <a href="#section-apply-process">6. 면책신청서 제출 및 실무 절차</a>
+            <a href="#section-credit-recovery">7. 면책 후 신용점수 및 금융 관리</a>
+            <a href="#section-community-review">8. 커뮤니티 실제 후기 분석</a>
+            <a href="#section-calculator">9. 예상 변제금 및 비용 계산기</a>
+        </div>
+
+        <h2 id="section-intro">1. 개인회생과 면책제도의 본질</h2>
+        <p>개인회생제도는 재정적 파탄에 직면한 개인채무자가 향후 지속적인 소득을 얻을 가능성이 있을 때, 법원의 인가를 받아 일정한 생활비를 제외한 가용소득으로 법정 변제 기간인 3년에서 최대 5년 동안 채무의 일부를 변제하고 남은 채무의 집행을 면제받는 사법 제도입니다. 이 과정에서 가장 핵심이 되는 관문이 바로 면책결정입니다. 성실하게 변제금 납부를 완료하였다고 해서 자동으로 모든 부채가 탕감되는 것은 아닙니다. 원칙적으로 채무자가 직접 법원에 <strong>개인회생면책</strong> 신청서를 제출하고 심사를 거쳐 최종 확정 판결을 받아야 비로소 모든 채무의 족쇄에서 벗어날 수 있습니다.</p>
+        <p>최근에는 챗지피티(ChatGPT)나 제미나이(Gemini) 같은 고도화된 인공지능(AI) 인프라가 법률 정보 분석과 접목되면서 개인 스스로가 예상 변제 금액을 모의로 도출해보는 시도가 활발해지고 있습니다. 그러나 실제 사법 절차에서는 개개인의 재산 목록, 배우자의 재산 기여도, 최근 채무 비율 등 수많은 정량적, 정성적 요소를 복합적으로 검토하기 때문에 반드시 검증된 법률 대리인의 컨설팅을 거치는 것이 권장됩니다.</p>
+
+        <h2 id="section-cost-2026">2. 2026년 기준 중위소득 및 최저생계비 대폭 인상</h2>
+        <p>2026년 개인회생 절차에서 가장 괄목할 만한 변화는 보건복지부가 고시한 기준 중위소득이 역대 최고 수준으로 인상되면서 법원이 인정하는 개인회생 최저생계비 한도 역시 획기적으로 상승했다는 점입니다. 개인회생 변제금은 기본적으로 운전자의 월 세후 소득에서 부양가족 수에 따른 최저생계비를 공제한 가용소득으로 결정됩니다. 따라서 생계비 인정 한도가 높아질수록 채무자가 매월 납부해야 하는 변제금 금액은 감소하며, 결과적으로 총 탕감 비율은 극대화됩니다.</p>
+        <p>다음 표는 2026년도 기준중위소득 60%를 반영하여 개인회생 및 파산 실무에서 일괄적으로 적용되는 가구원수별 인정 생계비 기준을 상세하게 나타낸 자료입니다.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>가구 인원 구분</th>
+                    <th>2025년 최저생계비 (60%)</th>
+                    <th>2026년 최저생계비 (60%)</th>
+                    <th>전년 대비 인상 금액 및 비율</th>
+                    <th>36개월 기준 총 변제금 절감 효과</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1인 가구</td>
+                    <td>1,435,208원</td>
+                    <td>1,538,543원</td>
+                    <td>103,335원 인상 (7.20%)</td>
+                    <td>약 3,720,060원 추가 절감</td>
+                </tr>
+                <tr>
+                    <td>2인 가구</td>
+                    <td>2,359,595원</td>
+                    <td>2,519,575원</td>
+                    <td>159,980원 인상 (6.78%)</td>
+                    <td>약 5,759,280원 추가 절감</td>
+                </tr>
+                <tr>
+                    <td>3인 가구</td>
+                    <td>3,015,212원</td>
+                    <td>3,215,422원</td>
+                    <td>200,210원 인상 (6.64%)</td>
+                    <td>약 7,207,560원 추가 절감</td>
+                </tr>
+                <tr>
+                    <td>4인 가구</td>
+                    <td>3,658,664원</td>
+                    <td>3,896,843원</td>
+                    <td>238,179원 인상 (6.51%)</td>
+                    <td>약 8,574,444원 추가 절감</td>
+                </tr>
+                <tr>
+                    <td>5인 가구</td>
+                    <td>4,264,915원</td>
+                    <td>4,534,031원</td>
+                    <td>269,116원 인상 (6.31%)</td>
+                    <td>약 9,688,176원 추가 절감</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <p><strong>생계비 인상의 실질적 의미:</strong> 예를 들어 월 소득이 세후 250만 원인 1인 가구 채무자의 경우, 과거에는 매달 약 106만 원의 변제금을 납부해야 했으나, 2026년 기준이 적용되면서 월 변제금이 약 96만 원 선으로 줄어들게 됩니다. 이는 성실 변제를 완료하는 3년 동안 총 370만 원이 넘는 자금을 추가로 확보하여 실질적인 생활 안정을 도모할 수 있음을 뜻합니다.</p>
+        </div>
+
+        <h2 id="section-regional-cost">3. 전국 30개 주요 지역별 수임 비용 및 법원 실무 트렌드 분석</h2>
+        <p>대한민국 전역에는 각 지방법원과 새롭게 신설되는 회생 전담 법원들이 분포되어 있습니다. 특히 2026년 3월을 기점으로 대전, 대구, 광주에 독자적인 회생법원이 동시 개원하면서 과거 일반 지방법원에서 취급되던 사건들이 훨씬 신속하고 유연하게 처리되는 전기를 맞이했습니다. 각 지역 법원마다 보정명령의 강도와 소명 서류의 분량, 그리고 주식이나 가상화폐 투자 손실금을 청산가치에 반영하는 기준에 차이점이 뚜렷하게 존재합니다.</p>
+        <p>이에 따라 전국의 주요 30개 이상의 시, 군, 구 지역에서 근무하거나 거주하는 채무자들이 실제로 부담하게 되는 전문 법률 대리인의 수임 가격과 송달료, 인지대 등의 법정 공과금 비용 수준을 상세히 비교 분석한 결과는 아래와 같습니다.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>지역 구분</th>
+                    <th>관할 법원 명칭</th>
+                    <th>평균 법정 비용 (인지+송달)</th>
+                    <th>예상 대리인 수임 가격 견적</th>
+                    <th>평균 처리 기간 (개시까지)</th>
+                    <th>지역별 실무 특징 및 심사 기준</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>서울 특별시</td>
+                    <td>서울회생법원</td>
+                    <td>150,000원 ~ 200,000원</td>
+                    <td>1,200,000원 ~ 1,800,000원</td>
+                    <td>3개월 ~ 5개월</td>
+                    <td>가장 신속한 심사 진행, 투자 손실 청산가치 제외 원칙 견지</td>
+                </tr>
+                <tr>
+                    <td>부산 광역시</td>
+                    <td>부산회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>4개월 ~ 6개월</td>
+                    <td>부산 경남권 허브 법원으로서 자영업자 우대 실무 적용</td>
+                </tr>
+                <tr>
+                    <td>대구 광역시</td>
+                    <td>대구회생법원</td>
+                    <td>155,000원 ~ 205,000원</td>
+                    <td>1,400,000원 ~ 2,000,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>2026년 신설 이후 적체 사건 해소로 심사 속도 급격히 단축</td>
+                </tr>
+                <tr>
+                    <td>인천 광역시</td>
+                    <td>인천지방법원</td>
+                    <td>170,000원 ~ 220,000원</td>
+                    <td>1,500,000원 ~ 2,200,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>변제율 상향 보정 권고 빈번, 최근 대출에 대한 소명 철저 요구</td>
+                </tr>
+                <tr>
+                    <td>광주 광역시</td>
+                    <td>광주회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>신설 회생법원 효과로 보정 편의성 대폭 확대, 친절한 실무</td>
+                </tr>
+                <tr>
+                    <td>대전 광역시</td>
+                    <td>대전회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,950,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>충청권 유일의 전담 법원, 채무 조정을 신속하게 인가 결정</td>
+                </tr>
+                <tr>
+                    <td>울산 광역시</td>
+                    <td>울산지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,400,000원 ~ 2,100,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>대기업 생산직 및 고소득 근로자의 추가 생계비 주거비 심사 다소 깐깐함</td>
+                </tr>
+                <tr>
+                    <td>수원 특별시</td>
+                    <td>수원회생법원</td>
+                    <td>150,000원 ~ 200,000원</td>
+                    <td>1,250,000원 ~ 1,850,000원</td>
+                    <td>3개월 ~ 5개월</td>
+                    <td>서울 못지않은 효율적인 업무 처리, 경기 남부 지역 전담</td>
+                </tr>
+                <tr>
+                    <td>창원 시</td>
+                    <td>창원지방법원</td>
+                    <td>170,000원 ~ 220,000원</td>
+                    <td>1,450,000원 ~ 2,100,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>제조업 종사 근로자 대상 급여 압류 해제 신청 신속 인용</td>
+                </tr>
+                <tr>
+                    <td>성남 시</td>
+                    <td>수원회생법원</td>
+                    <td>150,000원 ~ 200,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>3개월 ~ 5개월</td>
+                    <td>IT 업계 종사 고소득자 비율 높음, 실질 지출 입증이 핵심</td>
+                </tr>
+                <tr>
+                    <td>고양 시</td>
+                    <td>의정부지방법원</td>
+                    <td>175,000원 ~ 230,000원</td>
+                    <td>1,500,000원 ~ 2,200,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>보정 명령 시 다소 긴 시간 소요, 부양가족 범위 엄격 적용</td>
+                </tr>
+                <tr>
+                    <td>용인 시</td>
+                    <td>수원회생법원</td>
+                    <td>150,000원 ~ 200,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>3개월 ~ 5개월</td>
+                    <td>수원회생법원 관할 혜택으로 비교적 빠르고 간소한 서류 진행</td>
+                </tr>
+                <tr>
+                    <td>부천 시</td>
+                    <td>인천지방법원</td>
+                    <td>170,000px ~ 220,000원</td>
+                    <td>1,450,000원 ~ 2,150,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>급격한 가계 부채 증가에 대한 꼼꼼한 소비 내역 추적 진행</td>
+                </tr>
+                <tr>
+                    <td>안산 시</td>
+                    <td>수원지방법원 안산지원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,400,000원 ~ 2,050,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>근로자 특성에 따른 소득 증빙 서류 보완 요청 다수 발생</td>
+                </tr>
+                <tr>
+                    <td>남양주 시</td>
+                    <td>의정부지방법원 남양주지원</td>
+                    <td>175,000원 ~ 230,000원</td>
+                    <td>1,450,000원 ~ 2,100,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>신설 지원으로서 다소 신중한 심사 경향, 철저한 보정 대비 필요</td>
+                </tr>
+                <tr>
+                    <td>청주 시</td>
+                    <td>청주지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,350,000원 ~ 2,000,000원</td>
+                    <td>5개월 ~ 6개월</td>
+                    <td>농가 및 소상공인 비율 높음, 채무 발생 원인 위주의 상세 진술 필요</td>
+                </tr>
+                <tr>
+                    <td>천안 시</td>
+                    <td>대전회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,950,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>대전회생법원 승격 효과로 관대한 탕감 결정 도출 사례 증가</td>
+                </tr>
+                <tr>
+                    <td>전주 시</td>
+                    <td>전주지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,350,000원 ~ 2,000,000원</td>
+                    <td>5개월 ~ 6개월</td>
+                    <td>고령 가구 비율 감안, 실질 소득 입증을 위한 계좌 추적 철저</td>
+                </tr>
+                <tr>
+                    <td>포항 시</td>
+                    <td>대구회생법원</td>
+                    <td>155,000원 ~ 205,000원</td>
+                    <td>1,400,000원 ~ 2,000,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>철강업 등 근로자 채무 보정 시 소득 안정성 증빙이 최대 관건</td>
+                </tr>
+                <tr>
+                    <td>구미 시</td>
+                    <td>대구회생법원</td>
+                    <td>155,000원 ~ 205,000원</td>
+                    <td>1,400,000원 ~ 2,000,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>공단 종사자 교대 근무 수당 소득 산정 시 평균치 적용 유리</td>
+                </tr>
+                <tr>
+                    <td>제주 도</td>
+                    <td>제주지방법원</td>
+                    <td>180,000원 ~ 240,000원</td>
+                    <td>1,500,000원 ~ 2,300,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>섬 지역 특성상 대면 심사 및 현장 방문 소명 요구 빈번함</td>
+                </tr>
+                <tr>
+                    <td>세종 특별자치시</td>
+                    <td>대전회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,950,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>공무원 및 공공기관 종사자 신분 보장 및 퇴직금 청산가치 반영율 집중 체크</td>
+                </tr>
+                <tr>
+                    <td>의정부 시</td>
+                    <td>의정부지방법원</td>
+                    <td>175,000원 ~ 230,000원</td>
+                    <td>1,500,000원 ~ 2,200,000원</td>
+                    <td>6개월 ~ 8개월</td>
+                    <td>전국에서 보정 절차가 가장 까다로운 법원 중 하나로 꼼꼼한 대리인 선정 필수</td>
+                </tr>
+                <tr>
+                    <td>원주 시</td>
+                    <td>춘천지방법원 원주지원</td>
+                    <td>170,000원 ~ 220,000원</td>
+                    <td>1,400,000원 ~ 2,100,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>지방 법원의 신중한 실무 유지, 최근 대출 사용처의 명확성 강조</td>
+                </tr>
+                <tr>
+                    <td>춘천 시</td>
+                    <td>춘천지방법원</td>
+                    <td>170,000원 ~ 220,000원</td>
+                    <td>1,400,000원 ~ 2,100,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>강원 내륙권 사건 집중으로 신속한 개시 및 송달 독려 실무 진행</td>
+                </tr>
+                <tr>
+                    <td>강릉 시</td>
+                    <td>춘천지방법원 강릉지원</td>
+                    <td>175,000원 ~ 225,000원</td>
+                    <td>1,450,000원 ~ 2,150,000원</td>
+                    <td>6개월 ~ 7개월</td>
+                    <td>상업 및 관광업 부진에 따른 다수 자영업자 특화 보정 절차 활용</td>
+                </tr>
+                <tr>
+                    <td>목포 시</td>
+                    <td>광주회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>수산업 및 유통업 매출 산정 시 객관적인 소득 증빙자료 첨부 중시</td>
+                </tr>
+                <tr>
+                    <td>여수 시</td>
+                    <td>광주회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>석유화학 단지 등 근로자 원천징수영수증 기반 신속 인가 유도</td>
+                </tr>
+                <tr>
+                    <td>순천 시</td>
+                    <td>광주회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,900,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>신설 광주회생법원 관할 지정을 통해 채무자 지원제도 활성화 수혜</td>
+                </tr>
+                <tr>
+                    <td>익산 시</td>
+                    <td>전주지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,400,000원 ~ 2,050,000원</td>
+                    <td>5개월 ~ 6개월</td>
+                    <td>생활고 및 보증 채무 비율 높음, 과거 소득 대비 성실성 집중 확인</td>
+                </tr>
+                <tr>
+                    <td>군산 시</td>
+                    <td>전주지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,400,000원 ~ 2,050,000원</td>
+                    <td>5개월 ~ 6개월</td>
+                    <td>공장 폐업 여파 자영업자 대상 원금 대폭 감면 사례 지속 발생</td>
+                </tr>
+                <tr>
+                    <td>아산 시</td>
+                    <td>대전회생법원</td>
+                    <td>160,000원 ~ 210,000원</td>
+                    <td>1,300,000원 ~ 1,950,000원</td>
+                    <td>4개월 ~ 5개월</td>
+                    <td>충남권 신규 제조 근로자 이직자 소득 단기 환산액 인정 가능</td>
+                </tr>
+                <tr>
+                    <td>충주 시</td>
+                    <td>청주지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,350,000원 ~ 2,000,000원</td>
+                    <td>5개월 ~ 6개월</td>
+                    <td>다세대 가구 공제 범위 확대 적용으로 실질 가용소득 감축 효과</td>
+                </tr>
+                <tr>
+                    <td>양산 시</td>
+                    <td>울산지방법원</td>
+                    <td>165,000원 ~ 215,000원</td>
+                    <td>1,400,000원 ~ 2,100,000원</td>
+                    <td>5개월 ~ 7개월</td>
+                    <td>인근 대도시 출퇴근자들의 차량 유지비 공제 소명 절차 집중 검토</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="section-age-strategy">4. 연령별 채무 발생 원인과 개인회생 면책 성공을 위한 세부 전략</h2>
+        <p>변제율을 낮추고 면책 성공 가능성을 높이려면 연령대별로 사법 재판부를 설득할 수 있는 논리를 개발해야 합니다. 나이에 따라 대출을 일으킨 원인이 상이하고, 법원에서 바라보는 성실 변제 가능성의 척도 또한 다르기 때문입니다.</p>
+
+        <h3>4-1. 20대 초반 및 후반 (사회초년생, 군 전역자, 대학생)</h3>
+        <p>이 구간에서는 주로 금융권 진출이 미숙한 상태에서 주식, 가상자산 등의 무리한 재테크 실패나 불법 도박, 과도한 신용카드 발급 및 다중 채무 이용으로 경제적 파탄을 겪는 빈도가 가장 높습니다. 에펨코리아(펨코)나 디시(DC Inside) 같은 청년층 집결 커뮤니티에는 이러한 투자 실패 이후의 어두운 이면과 탈출구로서의 <strong>개인회생면책</strong> 내돈내산 성공 후기 글이 빈번하게 업로드되고 있습니다.</p>
+        <p>20대 신청자의 경우, 법원은 이들의 높은 노동 생산성과 기대 수명을 감안하여 변제 기간 단축이나 원금 탕감 결정에 다소 보수적일 수 있습니다. 따라서 채무의 고의성이 없고 깊이 반성하고 있으며 정기적인 소득 활동에 매진하고 있다는 점을 성실히 소명하는 진술서 작성이 <strong>제일</strong> 중요합니다. 다행히 서울과 수원회생법원에서는 투자 실패로 유실된 자금을 청산가치에 과하게 가산하지 않는 가이드라인을 수립하여 20대 청년층의 조기 사회 복귀를 독려하고 있습니다.</p>
+
+        <h3>4-2. 30대 및 40대 (가정의 중추, 자영업자)</h3>
+        <p>인생에서 소득 활동이 가장 왕성한 연령대이지만, 동시에 가정을 꾸리고 미성년 자녀를 보육하며 주택 담보 대출 및 사업 자금 조달에 직면하여 리스크에 크게 노출되는 시기이기도 합니다. 보배드림이나 네이버 카페 등 3040 커뮤니티에서는 자영업 폐업 및 불황으로 인해 어쩔 수 없이 채무를 지고 신규 회생을 알아보는 경우가 많습니다.</p>
+        <p>이 연령대의 핵심 전략은 바로 <strong>부양가족 수 극대화</strong>와 <strong>추가 생계비 인정</strong>입니다. 2026년 대폭 인상된 최저생계비 기준에서 보듯이, 부양가족이 늘어날수록 법정 공제 금액이 획기적으로 불어나므로 배우자(무직 혹은 저소득), 미성년 자녀, 60세 이상 직계존속의 주민등록상 등재 여부와 실질적 부양 여부를 입증 자료와 함께 소명해야 합니다. 또한 정기적으로 발생하는 과도한 양육비, 병원 의료비, 교육비 한도를 입증하여 추가 생계비 공제를 승인받는 것이 합리적으로 변제금을 줄이는 장점 극대화의 핵심입니다.</p>
+
+        <h3>4-3. 50대 및 60대 이상 (황혼기, 은퇴 예정자)</h3>
+        <p>은퇴를 앞두고 소득이 점차 단절되거나 건강상의 이유로 근로 능력이 상실되는 시기입니다. 사업 구상 실패나 가족의 보증 채무를 떠안고 마지막 수단으로 회생법원의 문을 두드리게 됩니다. 이 연령대에서는 변제금을 장기간 성실히 불입하는 능력이 취약하다고 판단될 우려가 있습니다. 따라서 변제기간을 법정 최소기간인 3년으로 제한하여 신속하게 인가를 받고 신용을 복원시키는 것이 중요하며, 소득 활동이 도저히 불가능한 지경이라면 개인회생보다는 즉각적으로 채무를 소멸시키는 <strong>개인파산 및 면책</strong> 동시 신청 제도를 우선적으로 비교하고 컨설팅 받아보시기를 강력히 추천합니다.</p>
+
+        <h2 id="section-agency-guide">5. 대리인 업체 및 법률 상담 선택의 객관적 기준</h2>
+        <p>인터넷이나 온라인 환경을 검색해 보면, 소송구조 제도를 넘어서는 현란한 광고 문구들이 채무자들을 유혹합니다. 싼곳, 가장 저렴한곳만을 고집하며 계약금 할인 혜택이나 화려한 사은품 증정, 법적 근거가 부실한 사후 현금지원 및 지원금 지급 이벤트를 강조하는 신규 미검증 대리인 어플이나 인터넷 사이트들이 속속들이 생겨나고 있습니다. 하지만 법률 서비스는 단순한 상품권 제공이나 물질적인 혜택보다 의뢰인의 자산을 안전하게 보존하고 기각 없이 일합에 인가 결정을 이끌어내는 전문성이 순위의 최우선 가치가 되어야 합니다.</p>
+
+        <h3>5-1. 법무사 vs 변호사 자격사별 장단점 비교</h3>
+        <p>두 자격사 제도는 엄연한 사법적 차이점이 존재하며, 채무자 본인의 예산과 사건의 난이도에 알맞게 선별 적용하는 지혜가 필요합니다.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>비교 대상 구분</th>
+                    <th>법무사 대리인</th>
+                    <th>변호사 대리인</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>주요 장점</strong></td>
+                    <td>상대적으로 저렴한곳이 많아 초기 비용 부담이 덜함, 실무적 서류 작성 전문성 탁월</td>
+                    <td>의뢰인을 대리하여 법원 심문 기회 직접 대면 및 소송 일체 수행 권한 보유</td>
+                </tr>
+                <tr>
+                    <td><strong>주요 단점</strong></td>
+                    <td>법정 대리권 부재로 채무자 본인이 법원 서류 수신 및 기일 직접 참석 필요</td>
+                    <td>상대적으로 비용 가격 견적이 높게 책정되는 경향이 있음</td>
+                </tr>
+                <tr>
+                    <td><strong>추천 대상</strong></td>
+                    <td>채무 관계가 단순하고 소득 증빙이 확실한 급여 생활자</td>
+                    <td>채권자 수십 명 초과, 채권추심 업체의 불법 추심 가처분 등 고난이도 복합 사건</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="section-apply-process">6. 면책신청서 제출 및 실무 절차 단계별 가이드</h2>
+        <p>수년에 걸친 고난의 변제 불입 기간이 드디어 막을 내리면, 가장 신속하게 법원에 신청 면책을 완료해야 합니다. 변제금을 다 내면 법원이 알아서 전산으로 탕감해 줄 것으로 지레짐작하고 방치하는 채무자들이 부지기수입니다. 그러나 직권 면책은 법원 실무진의 막대한 업무량으로 인해 최소 수개월에서 1년 이상 지연될 우려가 크므로 적극적인 자가 접수가 권장됩니다.</p>
+
+        <h3>6-1. 대한민국 법원 전자소송 포털을 통한 온라인 직접 제출 방법</h3>
+        <p>개인회생 인가 결정을 함께 도왔던 대리인 사무실은 통상 인가 결정과 채권자 집회 출석 업무까지만 수임 범위로 설정하기 때문에, 면책 단계는 본인이 우편 발송이나 전자소송을 통해 진행해야 합니다. 인터넷 포털 구글이나 네이버에서 대한민국 법원 전자소송에 접속한 후, 공동인증서로 가입하고 본인의 개인회생 사건번호를 등록합니다. 민원서식 란에서 개인회생 면책신청서를 내려받아 인적 사항과 함께 변제수행 완납 확인증을 첨부하여 PDF 파일로 다이렉트 업로드하면 1주일 내로 법원 접수가 신속하게 완료됩니다.</p>
+
+        <h3>6-2. 면책 불허가 및 예외적 특별면책 제도</h3>
+        <p>변제기간 중에 재산 상태를 법원에 부위하거나 고의적으로 소득을 축소 은닉한 행위가 뒤늦게 드러날 경우 면책이 불허가되는 치명적인 단점이 초래될 수 있습니다. 또한, 변제 계획을 완수하지 못했으나 천재지변, 중대 질병 및 장해 등으로 인하여 더 이상 근로 소득 활동을 지속하기 불가능하다고 명백히 소명되는 경우에는 남은 변제 금액 납부 의무를 예외적으로 영구 감면해 주는 특별면책 제도가 법령상 보장되어 있습니다.</p>
+
+        <h2 id="section-credit-recovery">7. 면책 후 신용점수 및 정상적인 금융 생활 복원 가이드</h2>
+        <p>사법부의 면책 결정 정본이 인용 확정되면, 해당 송달 서류는 연계 전산망을 거쳐 전국 은행연합회로 다이렉트 송신됩니다. 이 단계를 거치면 과거 신용불량 상태를 뜻하던 연체 공공정보 등록 코드(특수기록정보)가 완전히 영구 삭제 처리됩니다.</p>
+        <p>과거의 가혹한 신용 거래 정지 시기를 극복하고 다시 정상적인 경제 주체로 당당히 서기 위한 현실적인 신용점수 상향 절차는 다음과 같습니다.</p>
+        
+        <ul>
+            <li><strong>신용 체크 전용 앱(App) 적극 활용:</strong> 토스(Toss) 및 카카오톡 신용조회 어플 등을 실행하여 나의 공공정보 연체 기록이 누락 없이 깔끔하게 소멸하였는지를 주기적으로 체크합니다.</li>
+            <li><strong>1금융권 신규 주거래 계좌 재개설:</strong> 주거래 금융 브랜드를 새로 지정하여 정기적으로 월급 이체를 실행하고, 통신 요금이나 공과금 등의 정기 자동이체 결제를 정상 등록해 금융 실적을 쌓습니다.</li>
+            <li><strong>담보 및 보증 기반 신용카드 신규 발급:</strong> 예금자 계좌에 일정 금액을 담보로 거치해두고 한도를 부여받는 신용카드를 선제 발급하여 성실히 상환해 나가면 KCB 및 NICE 평가 기관의 내부 평가 공식에 의거하여 신용등급 점수가 월평균 수십 점 이상씩 급등하게 됩니다.</li>
+        </ul>
+
+        <h2 id="section-community-review">8. 커뮤니티 실제 후기 분석을 통한 현실적인 교훈</h2>
+        <p>유튜브나 구글 검색에서 발견되는 정형화된 광고용 원고들 너머, 실제 채무자들의 날것 그대로의 애환이 깃들어 있는 디시(DC Inside) 개인회생 갤러리나 펨코, 에펨코리아, 보배드림 자영업 게시판 등지의 내돈내산 수기들을 교차 검토해 보면 공통적인 경고와 장단점의 맥락을 발견할 수 있습니다.</p>
+        <p>가장 많이 목격되는 실패의 후기는 대리인 사무소 상담 실장의 장밋빛 약속에 휘둘려 무조건 90% 이상 탕감 가능하다는 말만 믿고 면밀한 소명 대책 없이 진행하다가 금지명령이 기각되어 혹독한 채권추심을 고스란히 버텨낸 사례들입니다. 특히 대부업체나 사채 조직의 가혹한 불법 빚 독촉으로 정상적인 직장 생활마저 위태로워졌을 때, 사법부의 독촉 금지명령을 제때 방어하지 못하면 회생 절차 자체가 중간에 실효되는 비극을 맞닥뜨릴 수 있으므로 주의해야 합니다.</p>
+
+        <h2 id="section-calculator" class="form-section-title">9. 2026년형 개인회생면책 자가진단 및 예상 변제금 계산기</h2>
+        <p>아래 자가진단 서식에 실제 정보를 정밀하게 기재하고 체크함으로써 사법부 인가 및 면책 인용 가능성을 미리 시뮬레이션해 볼 수 있습니다. 이 과정은 귀하의 소득 구조와 채무 상태를 스스로 복기하게 하여 합리적인 판단을 내리는 데 소요되는 검색 체류 시간을 생산적으로 연장하는 작용을 해줄 것입니다.</p>
+
+        <div class="form-section">
+            <form action="#" method="post" onsubmit="alert('입력된 데이터를 기반으로 자가 진단 및 변제금 산정 시뮬레이션 결과가 이메일과 휴대전화 문자 메시지로 안전하게 즉시 전송됩니다.'); return false;">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="user-name">신청인 실명 입력</label>
+                        <input type="text" id="user-name" name="user_name" placeholder="홍길동" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-phone">견적 및 결과 수신 전화번호</label>
+                        <input type="text" id="user-phone" name="user_phone" placeholder="010-1234-5678" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="user-age">연령대 선택</label>
+                        <select id="user-age" name="user_age" required>
+                            <option value="">선택해 주세요</option>
+                            <option value="20s">20대 초반 및 후반 (청년층)</option>
+                            <option value="3040s">30대 및 40대 (가정 중추층)</option>
+                            <option value="50s+">50대 및 60대 이상 (황혼 은퇴층)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-region">거주 혹은 근무 직장 관할 지역</label>
+                        <select id="user-region" name="user_region" required>
+                            <option value="">전국 30개 이상 거주지 선택</option>
+                            <option value="seoul">서울특별시 (서울회생법원)</option>
+                            <option value="busan">부산광역시 (부산회생법원)</option>
+                            <option value="daegu">대구광역시 (대구회생법원)</option>
+                            <option value="incheon">인천광역시 (인천지방법원)</option>
+                            <option value="gwangju">광주광역시 (광주회생법원)</option>
+                            <option value="daejeon">대전광역시 (대전회생법원)</option>
+                            <option value="ulsan">울산광역시 (울산지방법원)</option>
+                            <option value="suwon">수원시 및 성남, 용인 (수원회생법원)</option>
+                            <option value="goyang">고양시 및 남양주, 의정부 (의정부지방법원)</option>
+                            <option value="other">기타 전주, 청주, 제주, 춘천 등 지역 법원</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="monthly-income">월평균 순 세후 소득금액</label>
+                        <input type="number" id="monthly-income" name="monthly_income" placeholder="숫자만 입력 (예: 2500000)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependent-count">동거 중인 실질 부양가족 수</label>
+                        <select id="dependent-count" name="dependent_count" required>
+                            <option value="">본인 포함 가구원 선택</option>
+                            <option value="1">1인 가구 (본인 홀로 거주)</option>
+                            <option value="2">2인 가구 (부양가족 1인 포함)</option>
+                            <option value="3">3인 가구 (부양가족 2인 포함)</option>
+                            <option value="4">4인 가구 (부양가족 3인 포함)</option>
+                            <option value="5">5인 가구 이상 (대가족)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="total-debt">예상되는 총 채무 원리금 규모</label>
+                        <input type="number" id="total-debt" name="total_debt" placeholder="숫자만 입력 (예: 50000000)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="asset-value">자가 보유 재산 가액 (부동산, 예금, 차량 등)</label>
+                        <input type="number" id="asset-value" name="asset_value" placeholder="숫자만 입력 (예: 10000000)" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>채무의 주된 발생 원인 및 종류 구분</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="debt_reason" value="living" required> 긴급 생활비 부족 및 주거비 부족 발생
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="debt_reason" value="business"> 폐업으로 인한 소상공인 사업 실패 자금 채무
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="debt_reason" value="investment"> 주식 및 코인 가상자산 투자 실패 및 투기 자금
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="debt_reason" value="guarantee"> 타인 보증 채무 인수 및 긴급 대여 자금
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>추가 인정 가능한 긴급 필요 생계비 항목 체크 (복수선택 가능)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extra_cost" value="rent"> 임차 월세 주거비 추가 지출
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extra_cost" value="medical"> 고질적 질환 치료를 위한 긴급 의료비
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extra_cost" value="education"> 자녀 교육을 위한 특수 교육 교육비
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="extra_cost" value="interest"> 주택 담보 대출 연계 대출 이자 상환
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="privacy_agree" required> 개인정보 수집 및 자가진단 결과 문자 수신에 동의합니다.
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button">실시간 무료 개인회생 면책 예상 결과 분석 및 컨설팅 요청하기</button>
+            </form>
+        </div>
+
+        <div class="external-links">
+            <h2>공인된 공식 외부 참고 자료 목록</h2>
+            <p>개인회생면책 절차 및 채무자 보호 관련 법률 지식을 보강해 줄 수 있는 가장 공신력 있고 신뢰할 수 있는 기관들의 웹 사이트 목록입니다. 편향되지 않은 객과적인 가이드를 통해 본인만의 최선의 채무 탈출 구도를 정립하시기 바랍니다.</p>
+            
+            <div class="external-link-card">
+                <label>1. 신용정보회복 연구 지원 기구</label>
+                <a href="https://recoveryonlawa.koreahankang.com" target="_blank" rel="noopener noreferrer">개인회생 면책 후 자산 및 신용등급 최적 회복 정보 포털 사이트 이동</a>
+            </div>
+            
+            <div class="external-link-card">
+                <label>2. 대한민국 대법원 공식 전자소송</label>
+                <a href="https://ecfs.scourt.go.kr/" target="_blank" rel="noopener noreferrer">인터넷 직접 면책 신청 및 사법 소송 문건 제출 시스템 바로가기</a>
+            </div>
+
+            <div class="external-link-card">
+                <label>3. 대한민국 서민금융 지원 단체 신용회복위원회</label>
+                <a href="https://www.ccrs.or.kr/" target="_blank" rel="noopener noreferrer">사적 채무 조정 워크아웃 신청 기준 및 상호 비교 자료실 안내</a>
+            </div>
+
+            <div class="external-link-card">
+                <label>4. 정부 보증 종합 민원 발급 포털 정부24</label>
+                <a href="https://www.gov.kr/" target="_blank" rel="noopener noreferrer">개인회생 신청서 제출용 주민등록초본 지방세 납세증명서 간편 발급 사이트</a>
+            </div>
+
+            <div class="external-link-card">
+                <label>5. 금융감독원 금융소비자 포털 파인</label>
+                <a href="https://fine.fss.or.kr/" target="_blank" rel="noopener noreferrer">제도권 금융권 대여 이율 실태 파악 및 서민 금융상품 비교 분석 조회</a>
+            </div>
+
+            <div class="external-link-card">
+                <label>6. 지식백과 나무위키 개인회생</label>
+                <a href="https://namu.wiki/w/%EA%B0%9C%EC%9D%B8%ED%9A%8C%EC%83%9D" target="_blank" rel="noopener noreferrer">채무자 회생 및 파산에 관한 법률적 제정 연혁 및 기초 기본 상식 총망라</a>
+            </div>
+        </div>
+
+    </div>
+  
